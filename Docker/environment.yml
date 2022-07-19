@@ -1,0 +1,32 @@
+name: stylehuman
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+#  - pip
+  - pytorch=1.9.1
+  - torchvision==0.10.1
+  - torchaudio==0.9.1
+  - click>=8.0
+  - pillow
+  - scipy
+  - tqdm
+  - ninja=1.10.2
+  - matplotlib
+  - imageio
+  - dlib
+  - numpy>=1.20
+  - cudatoolkit-dev
+  - pip:
+    - imgui==1.3.0
+    - glfw==2.2.0
+    - pyopengl==3.1.5
+    - imageio-ffmpeg==0.4.3
+    - lpips==0.1.4
+    - pyspng
+    - opencv-python-headless
+    - pandas
+    - moviepy
+    - imutils
+

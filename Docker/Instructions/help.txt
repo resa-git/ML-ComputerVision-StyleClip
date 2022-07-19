@@ -1,0 +1,46 @@
+#docker build -t my-ngix-image:latest .
+docker build -t human-stylish-image:latest .
+docker compose build
+
+docker compose up -d
+docker run  --rm  -it -p 8888:8888 -v "$(pwd)"/wvol:/var/home/vol human-stylish-image:latest /bin/bash 
+docker run -it --rm  -p 8888:8888 -v "$(pwd)"/wvol:/var/home/vol python37:latest /bin/bash
+docker run  --rm -it -p 8888:8888 --user root -v "$(pwd)"/wvol:/home/jovyan/work p37:latest /bin/bash
+docker run  --rm -it -p 8888:8888  -v "$(pwd)"/wvol:/home/jovyan/work py37:latest /bin/bash
+docker container run -it human-stylish-image:latest /bin/bash
+docker run  --rm -it -p 8888:8888  --gpus all -v "$(pwd)"/wvol:/home/jovyan/work styleclip:latest /bin/bash
+--------------------------- delete -------------------
+docker rm $(docker ps --no-trunc -aq)
+
+docker-compose down -v --rmi all --remove-orphans
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -q)
+docker volume rm $(docker volume ls -q)
+-----------------------------------------------------
+
+jupyter-lab --no-browser –-port=8888
+
+---------------- add user ----------
+https://stackoverflow.com/questions/27701930/how-to-add-users-to-docker-container
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN echo 'ubuntu:ubuntu' | chpasswd
+-------------------------------
+
+
+docker inspect <container>
+
+docker container run -it -v /mnt/c/Users/rdadf/wdocker/dock2:/var/home/vol human-stylish-image:latest /bin/bash 
+docker run –d –p 8080:80 web_server
+
+localhost:8888/lab?token=docker
+
+docker run -t -d -P -v /c/Users/rdadf/wdocker/dock2/wvol:/var/home/vol --name human-stylish human-stylish-image:latest
+
+docker exec -it containerID /bin/bash
+
+docker system df
+docker system prune
+docker rmi <image>
+docker tag <imageID> username/repo:tag
+docker login
+docker run –d –p 8080:80 web_server (run in the background)
