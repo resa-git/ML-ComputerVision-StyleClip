@@ -32,7 +32,7 @@ USER $NB_UID
 #RUN pip install -U click
 
 RUN conda update conda
-COPY requirements.txt requirements.txt
+#COPY requirements.txt requirements.txt
 #RUN pip install -r requirements.txt --user
 #-----------------------------------
 
