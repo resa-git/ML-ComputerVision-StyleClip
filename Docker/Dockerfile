@@ -13,13 +13,14 @@ RUN apt-get update && apt-get install -y \
     libsoup2.4-dev                       \
     libssl-dev                           \
     python3-pip                          \
+	ffmpeg	                             \
     unzip                                \
     valac                                \
 	bash								\
     && rm -rf /var/lib/apt/lists/* &&	 \
     apt-get update 				 
 
-RUN git clone https://github.com/stylegan-human/StyleGAN-Human.git
+#RUN git clone https://github.com/stylegan-human/StyleGAN-Human.git
 
 ADD https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip /tmp
 RUN unzip /tmp/ninja-linux.zip -d /usr/local/bin
@@ -43,7 +44,7 @@ COPY environment.yml environment.yml
 #RUN conda update conda-build
 
 RUN conda env create -f environment.yml 
-
+#RUN python -m ipykernel install --user --name stylehuman --display-name "stylehuman"
 #RUN source activate base
 #RUN conda env update -n base -f environment.yml --prune
 #ENV PATH /opt/conda/envs/mro_env/bin:$PATH

@@ -3,6 +3,7 @@ channels:
   - pytorch
   - nvidia
   - conda-forge
+  - anaconda
 dependencies:
 #  - pip
   - pytorch=1.9.1
@@ -18,6 +19,7 @@ dependencies:
   - dlib
   - numpy>=1.20
   - cudatoolkit-dev
+  - ipykernel
   - pip:
     - imgui==1.3.0
     - glfw==2.2.0
