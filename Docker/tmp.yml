@@ -1,0 +1,54 @@
+conda install -n stylehuman ipykernel --update-deps --force-reinstall
+
+python -m ipykernel install --user --name stylehuman --display-name "stylehuman"
+
+
+conda install -c anaconda ipykernel
+
+conda create -y -n styleclip12
+conda activate styleclip12
+conda install -y "python<3.7" -c conda-forge # Python 3.6.13 (restricted by TensorFlow 1.x dependency)
+pip install nvidia-pyindex
+pip install nvidia-tensorflow==1.15.4 # only available for Python 3.6, replaces tensorflow-gpu==1.15.2
+conda install -y "cudatoolkit>=11,<11.2" -c pytorch # 11.0.221
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
+pip install git+https://github.com/openai/CLIP.git # forces pytorch 1.7.1 install
+pip install pandas requests opencv-python matplotlib scikit-learn gdown
+gdown https://drive.google.com/u/0/uc?id=1EM87UquaoQmk17Q8d5kYIAHqu0dkYqdT&export=download
+git clone https://github.com/omertov/encoder4editing.git
+
+
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
+
+import torch
+torch.cuda.is_available()
+
+###################################
+#apt-get update && apt-get install -y  libfcgi-dev wget curl git libglib2.0-dev libsoup2.4-dev libssl-dev python3-pip ffmpeg unzip valac bash && rm -rf /var/lib/apt/lists/* &&	apt-get update 		
+apt-get install python3.6
+python3 -m pip install --upgrade "pip < 21.1"
+
+wget -P /tmp https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip  
+unzip /tmp/ninja-linux.zip -d /usr/local/bin
+rm -f /tmp/ninja-linux.zip
+update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+
+
+
+########################################
+# VERSION: 0.1.0
+# DESCRIPTION: Basic extensible Jupyter Notebook/Lab Container
+# BUILD: docker build --rm -t docker-jupyter-extensible .
+
+#FROM python:3.6.15
+FROM nvidia/cuda:11.0.3-devel-ubuntu18.04
+RUN apt-get update && apt-get install -y  libfcgi-dev \
+	wget curl git libglib2.0-dev libsoup2.4-dev libssl-dev \
+	python3-pip ffmpeg unzip valac bash && rm -rf /var/lib/apt/lists/* &&	apt-get update 
+#RUN pip3 install jupyterlab
+#EXPOSE 8888
+WORKDIR /home
+#RUN mkdir -p /home/notebook
+#CMD jupyter-lab notebook --ip 0.0.0.0 --port 8888 --allow-root
+

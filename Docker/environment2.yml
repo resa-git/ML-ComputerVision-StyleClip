@@ -1,0 +1,25 @@
+name: stylehuman
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - anaconda
+dependencies:
+  - python<3.7
+  - pip:
+    - nvidia-pyindex
+    - nvidia-tensorflow==1.15.4
+    - torch==1.7.1+cu110 
+    - torchvision==0.8.2+cu110
+    - pandas
+    - requests
+    - opencv-python
+    - matplotlib
+    - scikit-learn
+    - gdown
+  - tqdm
+  - ninja=1.10.2
+  - imageio
+  - dlib
+  - numpy
+  - ipykernel

@@ -19,6 +19,7 @@ docker volume rm $(docker volume ls -q)
 -----------------------------------------------------
 
 jupyter-lab --no-browser –-port=8888
+jupyter lab --ip=0.0.0.0 --allow-root
 
 ---------------- add user ----------
 https://stackoverflow.com/questions/27701930/how-to-add-users-to-docker-container
