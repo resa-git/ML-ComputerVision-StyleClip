@@ -9,6 +9,9 @@ docker run  --rm -it -p 8888:8888 --user root -v "$(pwd)"/wvol:/home/jovyan/work
 docker run  --rm -it -p 8888:8888  -v "$(pwd)"/wvol:/home/jovyan/work py37:latest /bin/bash
 docker container run -it human-stylish-image:latest /bin/bash
 docker run  --rm -it -p 8888:8888  --gpus all -v "$(pwd)"/wvol:/home/jovyan/work styleclip:latest /bin/bash
+docker run  --rm -it -p 8888:8888 -p 1313:1313 -v "$(pwd)"/work:/home/work -e VIRTUL_HOST="http://docker.local:1313" hugo:latest /bin/bash
+
+hugo server --bind=0.0.0.0
 --------------------------- delete -------------------
 docker rm $(docker ps --no-trunc -aq)
 
