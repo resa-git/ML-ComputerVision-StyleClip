@@ -59,3 +59,8 @@ conda activate cenv           # . ./cenv/bin/activate in case of virtualenv
 conda install ipykernel
 (cenv)$ ipython kernel install --user --name=<any_name_for_kernel>
 (cenv)$ conda deactivate
+
+
+
+-------------------- extra help for styleClip should be removed in the future -------------
+python3 -m pip install -U dnnlib-util
