@@ -11,6 +11,9 @@ docker container run -it human-stylish-image:latest /bin/bash
 docker run  --rm -it -p 8888:8888  --gpus all -v "$(pwd)"/wvol:/home/jovyan/work styleclip:latest /bin/bash
 docker run  --rm -it -p 8888:8888 -p 1313:1313 -v "$(pwd)"/work:/home/work -e VIRTUL_HOST="http://docker.local:1313" hugo:latest /bin/bash
 
+### new way of specify the absolute path is:
+docker run  --rm -it -p 8888:8888  --gpus all -v %cd%/wvol:/home/jovyan/work styleclip:latest /bin/bash
+
 hugo server --bind=0.0.0.0
 jupyter lab --ip 0.0.0.0 --allow-root
 --------------------------- delete -------------------
