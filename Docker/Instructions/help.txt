@@ -52,3 +52,10 @@ docker rmi <image>
 docker tag <imageID> username/repo:tag
 docker login
 docker run –d –p 8080:80 web_server (run in the background)
+
+----------------------------------------------
+Assuming your conda-env is named cenv, it is as simple as :
+conda activate cenv           # . ./cenv/bin/activate in case of virtualenv
+conda install ipykernel
+(cenv)$ ipython kernel install --user --name=<any_name_for_kernel>
+(cenv)$ conda deactivate
