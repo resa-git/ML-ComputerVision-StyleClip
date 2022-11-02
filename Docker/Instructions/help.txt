@@ -16,6 +16,9 @@ docker container run -it human-stylish-image:latest /bin/bash
 docker run  --rm -it -p 8888:8888  --gpus all -v "$(pwd)"/wvol:/home/jovyan/work styleclip:latest /bin/bash
 docker run  --rm -it -p 8888:8888 -p 1313:1313 -v "$(pwd)"/work:/home/work -e VIRTUL_HOST="http://docker.local:1313" hugo:latest /bin/bash
 
+### new way of specify the absolute path is:
+docker run  --rm -it -p 8888:8888  --gpus all -v %cd%/wvol:/home/jovyan/work styleclip:latest /bin/bash
+
 hugo server --bind=0.0.0.0
 jupyter lab --ip 0.0.0.0 --allow-root
 --------------------------- delete -------------------
@@ -25,6 +28,7 @@ docker-compose down -v --rmi all --remove-orphans
 docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 docker volume rm $(docker volume ls -q)
+docker stop container#id
 -----------------------------------------------------
 
 jupyter-lab --no-browser –-port=8888
@@ -54,3 +58,16 @@ docker rmi <image>
 docker tag <imageID> username/repo:tag
 docker login
 docker run –d –p 8080:80 web_server (run in the background)
+
+----------------------------------------------
+Assuming your conda-env is named cenv, it is as simple as :
+conda activate cenv           # . ./cenv/bin/activate in case of virtualenv
+conda install ipykernel
+(cenv)$ ipython kernel install --user --name=<any_name_for_kernel>
+(cenv)$ conda deactivate
+
+
+
+-------------------- extra help for styleClip should be removed in the future -------------
+python3 -m pip install -U dnnlib-util
+conda install -c conda-forge wandb
