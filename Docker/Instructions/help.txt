@@ -64,3 +64,4 @@ conda install ipykernel
 
 -------------------- extra help for styleClip should be removed in the future -------------
 python3 -m pip install -U dnnlib-util
+conda install -c conda-forge wandb
