@@ -1,3 +1,8 @@
+docker inspect imageid
+docker logs containerid
+docker-compose run --rm web
+
+
 #docker build -t my-ngix-image:latest .
 docker build -t human-stylish-image:latest .
 docker compose build

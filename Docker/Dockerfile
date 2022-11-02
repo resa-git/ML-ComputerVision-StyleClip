@@ -48,3 +48,4 @@ RUN conda env create -f environment.yml
 #RUN source activate base
 #RUN conda env update -n base -f environment.yml --prune
 #ENV PATH /opt/conda/envs/mro_env/bin:$PATH
+

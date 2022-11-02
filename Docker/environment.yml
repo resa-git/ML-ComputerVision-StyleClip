@@ -31,4 +31,5 @@ dependencies:
     - pandas
     - moviepy
     - imutils
+    - wandb
 
