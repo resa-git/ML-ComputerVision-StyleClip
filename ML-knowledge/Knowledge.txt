@@ -1,1 +1,2 @@
-d
+StyleGAN-Human
+pti, in the single_id_coach change the save_image line to save only one picture
