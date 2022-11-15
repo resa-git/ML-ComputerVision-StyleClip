@@ -71,4 +71,6 @@ conda install ipykernel
 -------------------- extra help for styleClip should be removed in the future -------------
 python3 -m pip install -U dnnlib-util
 conda install -c conda-forge wandb
-python3 -m pip install paddlepaddle
+python3 -m pip install paddlepaddle-gpu
+conda install -c conda-forge scikit-learn
+pip install paddleseg
