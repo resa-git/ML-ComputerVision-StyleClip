@@ -90,3 +90,7 @@ pip install setuptools==59.5.0
 jupyter notebook --no-browser --port=8080 or jupyter notebook --no-browser
 ssh -L 8080:localhost:<PORT> <REMOTE_USER>@130.237.218.88
 http://localhost:8080/
+
+
+################ inside linux
+docker run -v  $(pwd):/src -it pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime  /bin/bash 
