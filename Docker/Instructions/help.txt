@@ -93,4 +93,5 @@ http://localhost:8080/
 
 
 ################ inside linux
-docker run -v  $(pwd):/workspace  --gpus '"device=1"' -it pytorch/pytorch:1.9.1-cuda11.1-cudnn8-devel  /bin/bash
+sudo docker run --rm -v  $(pwd)/styleGAN-Human:/home/jovyan/work  --gpus '"device=1"' -it -p 8888:8888 resagit/styleclip:latest /bin/bash
+sudo chmod -R 777 /var/www
