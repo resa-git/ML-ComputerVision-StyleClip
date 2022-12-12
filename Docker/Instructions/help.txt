@@ -93,4 +93,4 @@ http://localhost:8080/
 
 
 ################ inside linux
-docker run -v  $(pwd):/src -it pytorch/pytorch:1.9.1-cuda11.1-cudnn8-runtime  /bin/bash 
+docker run -v  $(pwd):/workspace  --gpus '"device=1"' -it pytorch/pytorch:1.9.1-cuda11.1-cudnn8-devel  /bin/bash
