@@ -93,5 +93,5 @@ http://localhost:8080/
 
 
 ################ inside linux
-sudo docker run --rm -v  $(pwd)/styleGAN-Human:/home/jovyan/work  --gpus '"device=1"' -it -p 8888:8888 resagit/styleclip:latest /bin/bash
+sudo docker run --rm -v  $(pwd)/ML-master:/home/jovyan/work  --gpus '"device=1"' -it -p 8888:8888 resagit/styleclip:latest /bin/bash
 sudo chmod -R 777 /var/www
